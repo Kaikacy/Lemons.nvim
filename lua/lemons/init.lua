@@ -14,7 +14,7 @@ local M = {}
 ---@type lemons.Config
 local config = {
     italic_comments = true,
-    bold_functions = true,
+    bold_functions = false,
     terminal_colors = true,
     float_style = "normal",
     hl_override = function()
