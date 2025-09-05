@@ -157,6 +157,7 @@ local function get_highlights(config, c)
         -- LSP semantic tokens
         ["@lsp.type.operator"] = {},
         ["@lsp.type.formatSpecifier"] = { link = "Special" },
+        ["@lsp.mod.callable"] = { link = "Function" },
 
         --- PLUGINS ---
         -- blink.cmp
