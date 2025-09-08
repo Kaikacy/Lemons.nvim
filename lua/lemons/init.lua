@@ -29,10 +29,8 @@ function M.setup(opts)
 end
 
 function M.load()
-    if vim.g.colors_name then
-        vim.cmd.highlight("clear")
-        vim.cmd.syntax("reset")
-    end
+    vim.cmd.highlight("clear")
+    vim.cmd.syntax("reset")
 
     vim.o.termguicolors = true
     vim.o.background = "dark"
