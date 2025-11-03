@@ -1,54 +1,40 @@
----@alias lemons.Highlights table<string, vim.api.keyset.highlight>
+-- these functions are required for :Lazy reload to work
 
----@param config lemons.Config
 ---@param c lemons.Colors
----@return lemons.Highlights
-local function get_highlights(config, c)
+local function get_highlights(c)
     return {
         Normal = { fg = c.white, bg = c.black },
-        ColorColumn = { bg = c.dark_grey },
+        NormalFloat = { link = "Normal" },
+        FloatBorder = { bg = c.black, fg = c.light_gray },
+        ColorColumn = { bg = c.dark_gray },
         Conceal = { fg = c.darker_white },
         CurSearch = { bg = c.yellow, fg = c.black },
         Cursor = { bg = c.white, fg = c.black },
-        CursorColumn = { bg = c.dark_grey },
-        CursorLine = { bg = c.dark_grey },
+        CursorColumn = { bg = c.dark_gray },
+        CursorLine = { bg = c.dark_gray },
         Directory = { fg = c.orange },
         DiffAdd = { bg = c.dark_green, fg = c.green },
-        DiffChange = { bg = c.grey },
-        DiffDelete = { bg = c.grey, fg = c.red },
+        DiffChange = { bg = c.gray },
+        DiffDelete = { bg = c.gray, fg = c.red },
         DiffText = { bg = c.dark_cyan, fg = c.cyan },
-        NonText = { fg = c.light_grey },
+        NonText = { fg = c.light_gray },
         TermCursor = { fg = c.black, bg = c.yellow },
         ErrorMsg = { link = "DiagnosticError" },
         WarningMsg = { link = "DiagnosticWarn" },
-        WinSeparator = { fg = c.grey },
+        WinSeparator = { fg = c.gray },
         Folded = { bg = c.dark_cyan, fg = c.cyan },
-        SignColumn = { fg = c.light_grey },
-        LineNr = { fg = c.light_grey },
+        SignColumn = { fg = c.light_gray },
+        LineNr = { fg = c.light_gray },
         CursorLineNr = { fg = c.yellow, bold = true },
-        MatchParen = { bg = c.grey, bold = true },
+        MatchParen = { bg = c.gray, bold = true },
         Search = { bg = c.dark_yellow, fg = c.yellow },
         ModeMsg = { fg = c.green },
         MoreMsg = { fg = c.yellow },
-        NormalFloat = (function()
-            if config.float_style == "normal" then
-                return { link = "Normal" }
-            elseif config.float_style == "light" then
-                return { bg = c.dark_grey }
-            end
-        end)(),
-        FloatBorder = (function()
-            if config.float_style == "normal" then
-                return { bg = c.black, fg = c.light_grey }
-            elseif config.float_style == "light" then
-                return { bg = c.dark_grey, fg = c.light_grey }
-            end
-        end)(),
         Title = { fg = c.yellow, bold = true },
-        Pmenu = { bg = c.dark_grey, fg = c.white },
+        Pmenu = { bg = c.dark_gray, fg = c.white },
         PmenuSel = { fg = c.black, bg = c.yellow },
         PmenuExtra = { fg = c.darker_white },
-        PmenuSbar = { bg = c.grey },
+        PmenuSbar = { bg = c.gray },
         PmenuThumb = { bg = c.dark_white },
         PmenuMatch = { bold = true },
         PmenuMatchSel = { bold = true, sp = c.black },
@@ -61,35 +47,35 @@ local function get_highlights(config, c)
         SpellCap = { undercurl = true, sp = c.yellow },
         SpellLocal = { undercurl = true, sp = c.green },
         SpellRare = { undercurl = true, sp = c.cyan },
-        StatusLine = { bg = c.dark_grey, fg = c.white },
-        StatusLineNC = { bg = c.grey, fg = c.dark_white },
-        Tabline = { bg = c.grey, fg = c.darker_white },
-        TablineFill = { bg = c.grey },
+        StatusLine = { bg = c.gray, fg = c.white },
+        StatusLineNC = { bg = c.dark_gray, fg = c.darker_white },
+        Tabline = { bg = c.gray, fg = c.darker_white },
+        TablineFill = { bg = c.gray },
         TablineSel = { bg = c.black, fg = c.white, bold = true },
-        Visual = { bg = c.grey, bold = true },
+        Visual = { bg = c.gray, bold = true },
         WinBar = { link = "StatusLine" },
         WinBarNC = { link = "StatusLineNC" },
 
-        Comment = { fg = c.darker_white, italic = config.italic_comments },
-        Function = { fg = c.yellow, bold = config.bold_functions },
+        Comment = { fg = c.darker_white, italic = true },
+        Function = { fg = c.yellow },
         String = { fg = c.green },
         Identifier = { fg = c.white },
         -- StorageClass = { fg = c.white, bold = true },
         Type = { fg = c.lime },
         Constant = { fg = c.pink },
-        Boolean = { link = "Constant" },
+        Boolean = { link = "Number" },
         Character = { link = "String" },
         Number = { fg = c.orange },
         -- Exception = { fg = c.red },
-        Label = { fg = c.dark_white, bold = true },
+        Label = { fg = c.dark_white },
         Operator = { fg = c.red },
         Special = { fg = c.light_cyan },
-        Delimiter = { fg = c.white },
+        Delimiter = { fg = c.dark_white },
         Statement = { link = "Keyword" },
         Keyword = { fg = c.orange },
         Structure = { fg = c.cyan },
         Todo = { fg = c.cyan },
-        PreProc = { fg = c.dark_white, bold = true },
+        PreProc = { fg = c.dark_white },
 
         Error = { fg = c.black, bg = c.red },
         Added = { fg = c.green },
@@ -121,13 +107,13 @@ local function get_highlights(config, c)
         DiagnosticSignOk = { fg = c.green, bold = true },
 
         -- LSP
-        LspCodeLens = { fg = c.light_grey },
-        LspCodeLensSeparator = { fg = c.light_grey },
-        LspInlayHint = { bg = c.dark_grey, fg = c.light_grey },
-        LspReferenceText = { bg = c.grey },
+        LspCodeLens = { fg = c.light_gray },
+        LspCodeLensSeparator = { fg = c.light_gray },
+        LspInlayHint = { bg = c.dark_gray, fg = c.light_gray },
+        LspReferenceText = { bg = c.gray },
         LspReferenceRead = { link = "LspReferenceText" },
         LspReferenceWrite = { link = "LspReferenceText" },
-        LspSignatureActiveParameter = { bg = c.grey, bold = true },
+        LspSignatureActiveParameter = { bg = c.gray, bold = true },
 
         -- Man
         manReference = { fg = c.blue },
@@ -135,8 +121,13 @@ local function get_highlights(config, c)
         -- Treesitter
         ["@variable"] = { fg = c.white },
         ["@type.builtin"] = { link = "Type" },
-        ["@attribute.builtin"] = { link = "@attribute" },
         ["@keyword.directive"] = { link = "PreProc" },
+        ["@attribute.builtin"] = { link = "@attribute" },
+        ["@function.builtin"] = { link = "@function" },
+        ["@variable.builtin"] = { link = "@variable" },
+        ["@variable.parameter.builtin"] = { link = "@variable.parameter" },
+        ["@constant.builtin"] = { link = "@constant" },
+        ["@module.builtin"] = { link = "@module" },
         ["@markup.heading.1"] = { fg = c.yellow, bold = true },
         ["@markup.heading.2"] = { fg = c.orange, bold = true },
         ["@markup.heading.3"] = { fg = c.red, bold = true },
@@ -200,7 +191,7 @@ local function get_highlights(config, c)
         BlinkCmpKindReference = { fg = c.light_cyan },
 
         -- lazy.nvim
-        LazyButtonActive = { bg = c.grey, bold = true },
+        LazyButtonActive = { bg = c.gray, bold = true },
         LazyReasonEvent = { fg = c.yellow },
         LazyReasonFt = { fg = c.cyan },
         LazyReasonImport = { fg = c.green },
@@ -213,14 +204,14 @@ local function get_highlights(config, c)
         MiniIconsBlue = { fg = c.blue },
         MiniIconsCyan = { fg = c.cyan },
         MiniIconsGreen = { fg = c.green },
-        MiniIconsGrey = { fg = c.dark_white },
+        MiniIconsgray = { fg = c.dark_white },
         MiniIconsOrange = { fg = c.orange },
         MiniIconsPurple = { fg = c.pink },
         MiniIconsRed = { fg = c.red },
         MiniIconsYellow = { fg = c.yellow },
 
         -- treesitter-context
-        TreesitterContextBottom = { underline = true, sp = c.light_grey },
+        TreesitterContextBottom = { underline = true, sp = c.light_gray },
         TreesitterContextLineNumber = { fg = c.darker_white },
 
         -- vim-illuminate
@@ -255,7 +246,7 @@ local function set_terminal_colors(c)
     vim.g.terminal_color_5 = c.pink
     vim.g.terminal_color_6 = c.cyan
     vim.g.terminal_color_7 = c.dark_white
-    vim.g.terminal_color_8 = c.light_grey
+    vim.g.terminal_color_8 = c.light_gray
     vim.g.terminal_color_9 = c.red
     vim.g.terminal_color_10 = c.lime
     vim.g.terminal_color_11 = c.orange
@@ -267,20 +258,14 @@ end
 
 local M = {}
 
----@param config lemons.Config
-function M.set(config)
-    local colors = require("lemons.colors").colors
-    local highlights = get_highlights(config, colors)
-
-    highlights = vim.tbl_extend("force", highlights, config.hl_override(colors))
+---@param colors lemons.Colors
+function M.set(colors)
+    local highlights = get_highlights(colors)
 
     for name, val in pairs(highlights) do
         vim.api.nvim_set_hl(0, name, val)
     end
-
-    if config.terminal_colors then
-        set_terminal_colors(colors)
-    end
+    set_terminal_colors(colors)
 end
 
 return M
