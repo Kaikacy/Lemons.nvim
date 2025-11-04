@@ -64,8 +64,8 @@ local function get_highlights(c)
         Type = { fg = c.lime },
         Constant = { fg = c.pink },
         Boolean = { link = "Number" },
-        Character = { link = "String" },
-        Number = { fg = c.orange },
+        Character = { link = "Constant" },
+        Number = { link = "Constant" },
         -- Exception = { fg = c.red },
         Label = { fg = c.dark_white },
         Operator = { fg = c.red },
@@ -120,8 +120,8 @@ local function get_highlights(c)
 
         -- Treesitter
         ["@variable"] = { fg = c.white },
-        ["@type.builtin"] = { link = "Type" },
         ["@keyword.directive"] = { link = "PreProc" },
+        ["@type.builtin"] = { fg = c.cyan },
         ["@attribute.builtin"] = { fg = c.cyan },
         ["@function.builtin"] = { fg = c.cyan },
         ["@variable.builtin"] = { fg = c.cyan },
@@ -147,8 +147,8 @@ local function get_highlights(c)
         ["@comment.note"] = { fg = c.blue },
 
         -- LSP semantic tokens
-        ["@lsp.type.operator"] = {},
         ["@lsp.type.formatSpecifier"] = { link = "Special" },
+        ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
         ["@lsp.mod.callable"] = { link = "Function" },
 
         --- PLUGINS ---
