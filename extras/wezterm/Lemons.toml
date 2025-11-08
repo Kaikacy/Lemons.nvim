@@ -1,0 +1,30 @@
+# Lemons
+[colors]
+    background    = "#040404"
+    cursor_bg     = "#040404"
+    cursor_border = "#040404"
+    cursor_fg     = "#f0f0f0"
+    foreground    = "#f0f0f0"
+    selection_bg  = "#212121"
+    selection_fg  = "#f0f0f0"
+
+    ansi = [
+        "#040404",
+        "#2ed563",
+        "#37c3b5",
+        "#5088ed",
+        "#ed505e",
+        "#f0be42",
+        "#f0f0f0",
+        "#f45ab4",
+    ]
+    brights = [
+        "#161616",
+        "#ed505e",
+        "2ed592",
+        "5088ed",
+        "6ad8ed",
+        "cacaca",
+        "f45ab4",
+        "fa8a49",
+    ]
