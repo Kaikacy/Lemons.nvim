@@ -49,5 +49,12 @@ To access color palette use `require("lemons.colors")` which is a table of color
 | `light_cyan`   | `#6AD8ED` |
 
 ## 🔌 Plugin support
-Here's the [list of supported plugins](https://github.com/Kaikacy/Lemons.nvim/blob/f151671146d810364108042c1e060215b79edaeb/lua/lemons/highlights.lua#L155).
+Here's the [list of supported plugins](lua/lemons/highlights.lua#L155).
 I only added highlights for the ones I use and don't like the defaults, but **feel free to make PRs and Issues**.
+
+## 🍭 Extras
+[extras directory](extras/) contains additional color configs for different programs and tools.
+
+<img alt="terminal preview" src="https://github.com/user-attachments/assets/d829e7ba-7512-4be2-8774-9937d128024d" />
+
+*Foot terminal*
