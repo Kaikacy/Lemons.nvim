@@ -157,6 +157,7 @@ local function get_highlights(c)
         BlinkCmpMenu = { link = "NormalFloat" },
         BlinkCmpMenuBorder = { link = "FloatBorder" },
         BlinkCmpDocBorder = { link = "FloatBorder" },
+        BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
         BlinkCmpLabelMatch = { link = "PmenuMatch" },
         BlinkCmpMenuSelection = { link = "PmenuSel" },
         BlinkCmpScrollBarThumb = { link = "PmenuThumb" },
