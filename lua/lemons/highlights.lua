@@ -245,4 +245,24 @@ function M.get(c, opts)
     return default
 end
 
+---@param c lemons.Colors
+function M.set_terminal_colors(c)
+    vim.g.terminal_color_0 = c.black
+    vim.g.terminal_color_1 = c.red
+    vim.g.terminal_color_2 = c.green
+    vim.g.terminal_color_3 = c.yellow
+    vim.g.terminal_color_4 = c.blue
+    vim.g.terminal_color_5 = c.pink
+    vim.g.terminal_color_6 = c.cyan
+    vim.g.terminal_color_7 = c.dark_white
+    vim.g.terminal_color_8 = c.light_gray
+    vim.g.terminal_color_9 = c.red
+    vim.g.terminal_color_10 = c.lime
+    vim.g.terminal_color_11 = c.orange
+    vim.g.terminal_color_12 = c.blue
+    vim.g.terminal_color_13 = c.pink
+    vim.g.terminal_color_14 = c.light_cyan
+    vim.g.terminal_color_15 = c.white
+end
+
 return M

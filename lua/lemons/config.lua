@@ -21,8 +21,8 @@ local M = {}
 ---@field cyan? string
 
 ---@class lemons.Configuration
----@field overrides? lemons.ColorsOverrides
----@field highlights_overrides? table<string, vim.api.keyset.highlight>
+---@field overrides lemons.ColorsOverrides
+---@field highlights_overrides table<string, vim.api.keyset.highlight>
 
 ---@type lemons.Configuration
 M.default = {
@@ -30,9 +30,10 @@ M.default = {
     highlights_overrides = {},
 }
 
----@param opts? lemons.Configuration
+---@param opts? {overrides?: lemons.ColorsOverrides, highlights_overrides?: table<string, vim.api.keyset.highlight>}
 ---@return lemons.Configuration
 function M.setup(opts)
+    ---@cast opts lemons.Configuration
     return opts and vim.tbl_deep_extend("force", M.default, opts) or M.default
 end
 
