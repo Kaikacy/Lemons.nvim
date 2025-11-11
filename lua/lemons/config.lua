@@ -1,5 +1,3 @@
-local M = {}
-
 ---@class lemons.ColorsOverrides
 ---@field black? string
 ---@field dark_gray? string
@@ -19,22 +17,30 @@ local M = {}
 ---@field pink? string
 ---@field dark_cyan? string
 ---@field cyan? string
+---@field light_cyan? string
 
----@class lemons.Configuration
----@field overrides lemons.ColorsOverrides
----@field highlights_overrides table<string, vim.api.keyset.highlight>
+---@class lemons.OptionalConfig
+---@field overrides? { colors?: lemons.ColorsOverrides }
+---@field undercurl? boolean
 
----@type lemons.Configuration
-M.default = {
-    overrides = {},
-    highlights_overrides = {},
+---@class lemons.Config
+---@field overrides? { colors?: lemons.ColorsOverrides }
+---@field undercurl boolean
+
+local M = {}
+
+---@type lemons.Config
+M.defaults = {
+    overrides = { colors = {} },
+    undercurl = true,
 }
 
----@param opts? {overrides?: lemons.ColorsOverrides, highlights_overrides?: table<string, vim.api.keyset.highlight>}
----@return lemons.Configuration
+---@param opts? lemons.OptionalConfig
+---@return lemons.Config
 function M.setup(opts)
-    ---@cast opts lemons.Configuration
-    return opts and vim.tbl_deep_extend("force", M.default, opts) or M.default
+    ---@diagnostic disable-next-line: cast-type-mismatch
+    ---@cast opts lemons.Config
+    return opts and vim.tbl_deep_extend("force", M.defaults, opts) or M.defaults
 end
 
 return M

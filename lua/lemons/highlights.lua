@@ -1,9 +1,9 @@
 local M = {}
 
 ---@param c lemons.Colors
----@param opts lemons.Configuration
-function M.get(c, opts)
-    local default = {
+---@param undercurl boolean
+function M.get_highlights(c, undercurl)
+    return {
         Normal = { fg = c.white, bg = c.black },
         NormalFloat = { link = "Normal" },
         FloatBorder = { bg = c.black, fg = c.light_gray },
@@ -94,11 +94,12 @@ function M.get(c, opts)
         DiagnosticVirtualTextInfo = { fg = c.blue, bold = true },
         DiagnosticVirtualTextHint = { fg = c.cyan, bold = true },
         DiagnosticVirtualTextOk = { fg = c.green, bold = true },
-        DiagnosticUnderlineError = { underline = true, sp = c.red },
-        DiagnosticUnderlineWarn = { underline = true, sp = c.yellow },
-        DiagnosticUnderlineInfo = { underline = true, sp = c.blue },
-        DiagnosticUnderlineHint = { underline = true, sp = c.cyan },
-        DiagnosticUnderlineOk = { underline = true, sp = c.green },
+        DiagnosticUnderlineError = undercurl and { undercurl = true, sp = c.red } or { underline = true, sp = c.red },
+        DiagnosticUnderlineWarn = undercurl and { underline = true, sp = c.yellow }
+            or { underline = true, sp = c.yellow },
+        DiagnosticUnderlineInfo = undercurl and { underline = true, sp = c.blue } or { underline = true, sp = c.blue },
+        DiagnosticUnderlineHint = undercurl and { underline = true, sp = c.cyan } or { underline = true, sp = c.cyan },
+        DiagnosticUnderlineOk = undercurl and { underline = true, sp = c.green } or { underline = true, sp = c.green },
         DiagnosticDeprecated = { strikethrough = true, fg = c.darker_white },
         DiagnosticUnused = { link = "Comment" },
         DiagnosticSignError = { fg = c.red, bold = true },
@@ -110,7 +111,7 @@ function M.get(c, opts)
         -- LSP
         LspCodeLens = { fg = c.light_gray },
         LspCodeLensSeparator = { fg = c.light_gray },
-        LspInlayHint = { bg = c.dark_gray, fg = c.light_gray },
+        LspInlayHint = { fg = c.light_gray },
         LspReferenceText = { bg = c.gray },
         LspReferenceRead = { link = "LspReferenceText" },
         LspReferenceWrite = { link = "LspReferenceText" },
@@ -158,6 +159,7 @@ function M.get(c, opts)
         BlinkCmpMenu = { link = "NormalFloat" },
         BlinkCmpMenuBorder = { link = "FloatBorder" },
         BlinkCmpDocBorder = { link = "FloatBorder" },
+        BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
         BlinkCmpLabelMatch = { link = "PmenuMatch" },
         BlinkCmpMenuSelection = { link = "PmenuSel" },
         BlinkCmpScrollBarThumb = { link = "PmenuThumb" },
@@ -237,32 +239,6 @@ function M.get(c, opts)
         LuaLineDiffDelete = { link = "Removed" },
         LuaLineDiffChange = { link = "Changed" },
     }
-
-    for key, highlight in pairs(opts.highlights_overrides or {}) do
-        default[key] = highlight
-    end
-
-    return default
-end
-
----@param c lemons.Colors
-function M.set_terminal_colors(c)
-    vim.g.terminal_color_0 = c.black
-    vim.g.terminal_color_1 = c.red
-    vim.g.terminal_color_2 = c.green
-    vim.g.terminal_color_3 = c.yellow
-    vim.g.terminal_color_4 = c.blue
-    vim.g.terminal_color_5 = c.pink
-    vim.g.terminal_color_6 = c.cyan
-    vim.g.terminal_color_7 = c.dark_white
-    vim.g.terminal_color_8 = c.light_gray
-    vim.g.terminal_color_9 = c.red
-    vim.g.terminal_color_10 = c.lime
-    vim.g.terminal_color_11 = c.orange
-    vim.g.terminal_color_12 = c.blue
-    vim.g.terminal_color_13 = c.pink
-    vim.g.terminal_color_14 = c.light_cyan
-    vim.g.terminal_color_15 = c.white
 end
 
 return M

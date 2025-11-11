@@ -1,0 +1,30 @@
+# Lemons theme for WezTerm
+[colors]
+background    = "#040404"
+cursor_bg     = "#040404"
+cursor_border = "#040404"
+cursor_fg     = "#f0f0f0"
+foreground    = "#f0f0f0"
+selection_bg  = "#212121"
+selection_fg  = "#f0f0f0"
+
+ansi = [
+    "#040404",
+    "#ed505e",
+    "#2ed563",
+    "#f0be42",
+    "#5088ed",
+    "#f45ab4",
+    "#37c3b5",
+    "#cacaca",
+]
+brights = [
+    "#161616",
+    "#ed505e",
+    "#2ed592",
+    "#fa8a49",
+    "#5088ed",
+    "#f45ab4",
+    "#6ad8ed",
+    "#f0f0f0",
+]
