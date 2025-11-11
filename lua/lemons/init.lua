@@ -27,6 +27,8 @@ function M.load()
     for key, hl in pairs(hls) do
         vim.api.nvim_set_hl(0, key, hl)
     end
+
+    require("lemons.highlights").set_terminal_colors(colors)
 end
 
 return M
