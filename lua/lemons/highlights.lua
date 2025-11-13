@@ -1,7 +1,8 @@
--- these functions are required for :Lazy reload to work
+local M = {}
 
 ---@param c lemons.Colors
-local function get_highlights(c)
+---@param undercurl boolean
+function M.get_highlights(c, undercurl)
     return {
         Normal = { fg = c.white, bg = c.black },
         NormalFloat = { link = "Normal" },
@@ -93,11 +94,12 @@ local function get_highlights(c)
         DiagnosticVirtualTextInfo = { fg = c.blue, bold = true },
         DiagnosticVirtualTextHint = { fg = c.cyan, bold = true },
         DiagnosticVirtualTextOk = { fg = c.green, bold = true },
-        DiagnosticUnderlineError = { underline = true, sp = c.red },
-        DiagnosticUnderlineWarn = { underline = true, sp = c.yellow },
-        DiagnosticUnderlineInfo = { underline = true, sp = c.blue },
-        DiagnosticUnderlineHint = { underline = true, sp = c.cyan },
-        DiagnosticUnderlineOk = { underline = true, sp = c.green },
+        DiagnosticUnderlineError = undercurl and { undercurl = true, sp = c.red } or { underline = true, sp = c.red },
+        DiagnosticUnderlineWarn = undercurl and { underline = true, sp = c.yellow }
+            or { underline = true, sp = c.yellow },
+        DiagnosticUnderlineInfo = undercurl and { underline = true, sp = c.blue } or { underline = true, sp = c.blue },
+        DiagnosticUnderlineHint = undercurl and { underline = true, sp = c.cyan } or { underline = true, sp = c.cyan },
+        DiagnosticUnderlineOk = undercurl and { underline = true, sp = c.green } or { underline = true, sp = c.green },
         DiagnosticDeprecated = { strikethrough = true, fg = c.darker_white },
         DiagnosticUnused = { link = "Comment" },
         DiagnosticSignError = { fg = c.red, bold = true },
@@ -240,7 +242,7 @@ local function get_highlights(c)
 end
 
 ---@param c lemons.Colors
-local function set_terminal_colors(c)
+function M.set_terminal_colors(c)
     vim.g.terminal_color_0 = c.black
     vim.g.terminal_color_1 = c.red
     vim.g.terminal_color_2 = c.green
@@ -258,17 +260,4 @@ local function set_terminal_colors(c)
     vim.g.terminal_color_14 = c.light_cyan
     vim.g.terminal_color_15 = c.white
 end
-
-local M = {}
-
----@param colors lemons.Colors
-function M.set(colors)
-    local highlights = get_highlights(colors)
-
-    for name, val in pairs(highlights) do
-        vim.api.nvim_set_hl(0, name, val)
-    end
-    set_terminal_colors(colors)
-end
-
 return M

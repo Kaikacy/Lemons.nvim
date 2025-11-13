@@ -1,23 +1,23 @@
 ---@class lemons.Colors
----@field black string
----@field dark_gray string
----@field gray string
----@field light_gray string
----@field darker_white string
----@field dark_white string
----@field white string
----@field red string
----@field dark_green string
----@field lime string
----@field green string
----@field dark_yellow string
----@field orange string
----@field yellow string
----@field blue string
----@field pink string
----@field dark_cyan string
----@field cyan string
----@field light_cyan string
+---@field black string              |"#040404"
+---@field dark_gray string          |"#161616"
+---@field gray string               |"#212121"
+---@field light_gray string         |"#565656"
+---@field darker_white string       |"#808080"
+---@field dark_white string         |"#cacaca"
+---@field white string              |"#f0f0f0"
+---@field red string                |"#ed505e"
+---@field dark_green string         |"#0b1b10"
+---@field lime string               |"#2ed592"
+---@field green string              |"#2ed563"
+---@field dark_yellow string        |"#1d190d"
+---@field orange string             |"#fa8a49"
+---@field yellow string             |"#f0be42"
+---@field blue string               |"#5088ed"
+---@field pink string               |"#f45ab4"
+---@field dark_cyan string          |"#0c1918"
+---@field cyan string               |"#37c3b5"
+---@field light_cyan string         |"#6ad8ed"
 
 -- stylua: ignore
 ---@type lemons.Colors
