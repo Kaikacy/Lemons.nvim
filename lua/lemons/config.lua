@@ -1,4 +1,4 @@
----@class lemons.ColorsOverrides
+---@class lemons.ColorsOverride
 ---@field black? string
 ---@field dark_gray? string
 ---@field gray? string
@@ -19,23 +19,19 @@
 ---@field cyan? string
 ---@field light_cyan? string
 
----@class lemons.OptionalConfig
----@field overrides? { colors?: lemons.ColorsOverrides }
----@field undercurl? boolean
-
 ---@class lemons.Config
----@field overrides? { colors?: lemons.ColorsOverrides }
----@field undercurl boolean
+---@field colors_override? lemons.ColorsOverride
+---@field undercurl? boolean
 
 local M = {}
 
 ---@type lemons.Config
 M.defaults = {
-    overrides = { colors = {} },
-    undercurl = true,
+    colors_override = {},
+    undercurl = false,
 }
 
----@param opts? lemons.OptionalConfig
+---@param opts? lemons.Config
 ---@return lemons.Config
 function M.setup(opts)
     ---@diagnostic disable-next-line: cast-type-mismatch
