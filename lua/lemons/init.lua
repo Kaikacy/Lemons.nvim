@@ -2,7 +2,7 @@
 local M = {}
 local config = require("lemons.config")
 
----@param opts? lemons.OptionalConfig
+---@param opts? lemons.Config
 function M.setup(opts)
     M.options = config.setup(opts)
 end
@@ -15,14 +15,10 @@ function M.load()
     vim.o.background = "dark"
     vim.g.colors_name = "lemons"
 
-    M.options = M.options or { undercurl = true }
-    local colors = vim.tbl_deep_extend(
-        "force",
-        require("lemons.colors"),
-        (M.options and M.options.overrides and M.options.overrides.colors) or {}
-    )
+    M.options = M.options or config.defaults
+    local colors = vim.tbl_extend("force", require("lemons.colors"), M.options.colors_override or {})
 
-    local hls = require("lemons.highlights").get_highlights(colors, M.options.undercurl or true)
+    local hls = require("lemons.highlights").get_highlights(colors, M.options)
 
     for key, hl in pairs(hls) do
         vim.api.nvim_set_hl(0, key, hl)

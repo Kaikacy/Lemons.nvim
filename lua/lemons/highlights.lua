@@ -1,8 +1,8 @@
 local M = {}
 
 ---@param c lemons.Colors
----@param undercurl boolean
-function M.get_highlights(c, undercurl)
+---@param opts lemons.Config
+function M.get_highlights(c, opts)
     return {
         Normal = { fg = c.white, bg = c.black },
         NormalFloat = { link = "Normal" },
@@ -94,12 +94,16 @@ function M.get_highlights(c, undercurl)
         DiagnosticVirtualTextInfo = { fg = c.blue, bold = true },
         DiagnosticVirtualTextHint = { fg = c.cyan, bold = true },
         DiagnosticVirtualTextOk = { fg = c.green, bold = true },
-        DiagnosticUnderlineError = undercurl and { undercurl = true, sp = c.red } or { underline = true, sp = c.red },
-        DiagnosticUnderlineWarn = undercurl and { underline = true, sp = c.yellow }
+        DiagnosticUnderlineError = opts.undercurl and { undercurl = true, sp = c.red }
+            or { underline = true, sp = c.red },
+        DiagnosticUnderlineWarn = opts.undercurl and { undercurl = true, sp = c.yellow }
             or { underline = true, sp = c.yellow },
-        DiagnosticUnderlineInfo = undercurl and { underline = true, sp = c.blue } or { underline = true, sp = c.blue },
-        DiagnosticUnderlineHint = undercurl and { underline = true, sp = c.cyan } or { underline = true, sp = c.cyan },
-        DiagnosticUnderlineOk = undercurl and { underline = true, sp = c.green } or { underline = true, sp = c.green },
+        DiagnosticUnderlineInfo = opts.undercurl and { undercurl = true, sp = c.blue }
+            or { underline = true, sp = c.blue },
+        DiagnosticUnderlineHint = opts.undercurl and { undercurl = true, sp = c.cyan }
+            or { underline = true, sp = c.cyan },
+        DiagnosticUnderlineOk = opts.undercurl and { undercurl = true, sp = c.green }
+            or { underline = true, sp = c.green },
         DiagnosticDeprecated = { strikethrough = true, fg = c.darker_white },
         DiagnosticUnused = { link = "Comment" },
         DiagnosticSignError = { fg = c.red, bold = true },
