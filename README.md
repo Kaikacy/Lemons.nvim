@@ -4,7 +4,7 @@ My favorite colorscheme for Neovim.
 
 <img alt="preview" src="https://github.com/user-attachments/assets/c6f48c00-65a8-4271-a2cb-9f4112e5a98f" />
 
-## Setup
+## 📦 Setup
 Just install with any package manager.
 [Lazy.nvim](https://github.com/folke/lazy.nvim) for example:
 ```lua
@@ -14,18 +14,37 @@ Just install with any package manager.
   lazy = false,
   priority = 1000,
   config = function()
+    require("lemons").setup({
+      -- options (see #configuration)
+    })
     vim.cmd.colorscheme("lemons")
-    -- or
-    -- require("lemons").load()
-    -- there is no difference between these two
-  end
+  end,
 }
 ```
-> Configuration options are not provided and I probably won't add any 😐
+> ~Configuration options are not provided and I probably won't add any 😐~
+
+## ⚙️ Configuration
+### Defaults:
+```lua
+---@type lemons.Config
+{
+  ---@type lemons.ColorsOverride
+  colors_override = {}, -- Override color palette
+  undercurl = false, -- Use undercurl instead of underline
+  terminal_colors = true, -- Set terminal colors
+}
+```
 
 ## 🎨 Colors
-To access color palette use `require("lemons.colors")` which is a table of colors.
-### Here are all of the colors:
+To access color palette:
+```lua
+-- default colors
+local default_colors = require("lemons.colors").defaults
+-- overridden colors (this should be used after calling setup)
+local colors = require("lemons.colors").colors
+```
+
+### Default colors:
 | Name         | Value   |
 |--------------|---------|
 | `black`        | `#040404` |
@@ -49,7 +68,7 @@ To access color palette use `require("lemons.colors")` which is a table of color
 | `light_cyan`   | `#6AD8ED` |
 
 ## 🔌 Plugin support
-Here's the [list of supported plugins](lua/lemons/highlights.lua#L155).
+Here's the [list of supported plugins](lua/lemons/highlights.lua#L161).
 I only added highlights for the ones I use and don't like the defaults, but **feel free to make PRs and Issues**.
 
 ## 🍭 Extras
