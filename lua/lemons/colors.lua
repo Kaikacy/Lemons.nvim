@@ -19,9 +19,11 @@
 ---@field cyan string               |"#37c3b5"
 ---@field light_cyan string         |"#6ad8ed"
 
+local M = {}
+
 -- stylua: ignore
 ---@type lemons.Colors
-return {
+M.defaults = {
     black        = "#040404",
     dark_gray    = "#161616",
     gray         = "#212121",
@@ -42,3 +44,14 @@ return {
     cyan         = "#37c3b5",
     light_cyan   = "#6ad8ed",
 }
+
+M.colors = M.defaults
+
+---@param overrides lemons.ColorsOverride
+---@return lemons.Colors
+function M.override(overrides)
+    M.colors = vim.tbl_extend("force", M.defaults, overrides)
+    return M.colors
+end
+
+return M

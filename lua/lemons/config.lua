@@ -20,8 +20,9 @@
 ---@field light_cyan? string
 
 ---@class lemons.Config
----@field colors_override? lemons.ColorsOverride
----@field undercurl? boolean
+---@field colors_override? lemons.ColorsOverride Override color palette
+---@field undercurl? boolean Use undercurl instead of underline
+---@field terminal_colors? boolean Set terminal colors
 
 local M = {}
 
@@ -29,6 +30,7 @@ local M = {}
 M.defaults = {
     colors_override = {},
     undercurl = false,
+    terminal_colors = true,
 }
 
 ---@param opts? lemons.Config
