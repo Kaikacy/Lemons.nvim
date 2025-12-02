@@ -156,6 +156,7 @@ function M.get_highlights(c, opts)
         -- LSP semantic tokens
         ["@lsp.type.formatSpecifier"] = { link = "Special" },
         ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
+        ["@lsp.type.builtin"] = { fg = c.cyan },
         ["@lsp.mod.callable"] = { link = "Function" },
 
         --- PLUGINS ---
