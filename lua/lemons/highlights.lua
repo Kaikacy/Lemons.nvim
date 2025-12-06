@@ -53,7 +53,7 @@ function M.get_highlights(c, opts)
         Tabline = { bg = c.gray, fg = c.darker_white },
         TablineFill = { bg = c.gray },
         TablineSel = { bg = c.black, fg = c.white, bold = true },
-        Visual = { bg = c.gray },
+        Visual = { bg = c.gray, bold = true },
         WinBar = { link = "StatusLine" },
         WinBarNC = { link = "StatusLineNC" },
 
