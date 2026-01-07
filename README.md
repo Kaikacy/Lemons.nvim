@@ -47,7 +47,7 @@ local colors = require("lemons.colors").colors
 ### Default colors:
 | Name         | Value   |
 |--------------|---------|
-| `black`        | `#040404` |
+| `black`        | `#000000` |
 | `dark_gray`    | `#161616` |
 | `gray`         | `#212121` |
 | `light_gray`   | `#565656` |

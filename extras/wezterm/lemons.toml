@@ -1,15 +1,15 @@
 # Lemons theme for WezTerm
 [colors]
-background    = "#040404"
-cursor_bg     = "#040404"
-cursor_border = "#040404"
+background    = "#000000"
+cursor_bg     = "#000000"
+cursor_border = "#000000"
 cursor_fg     = "#f0f0f0"
 foreground    = "#f0f0f0"
 selection_bg  = "#212121"
 selection_fg  = "#f0f0f0"
 
 ansi = [
-    "#040404",
+    "#000000",
     "#ed505e",
     "#2ed563",
     "#f0be42",

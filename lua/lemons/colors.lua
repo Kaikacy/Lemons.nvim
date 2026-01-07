@@ -1,5 +1,5 @@
 ---@class lemons.Colors
----@field black string              |"#040404"
+---@field black string              |"#000000"
 ---@field dark_gray string          |"#161616"
 ---@field gray string               |"#212121"
 ---@field light_gray string         |"#565656"
@@ -24,7 +24,7 @@ local M = {}
 -- stylua: ignore
 ---@type lemons.Colors
 M.defaults = {
-    black        = "#040404",
+    black        = "#000000",
     dark_gray    = "#161616",
     gray         = "#212121",
     light_gray   = "#565656",
