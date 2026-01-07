@@ -3,10 +3,11 @@ local M = {}
 ---@param c lemons.Colors
 ---@param opts lemons.Config
 function M.get_highlights(c, opts)
+    ---@type table<string, vim.api.keyset.highlight>
     return {
         Normal = { fg = c.white, bg = c.black },
-        NormalFloat = { link = "Normal" },
-        FloatBorder = { bg = c.black, fg = c.light_gray },
+        NormalFloat = { bg = opts.lighter_float and c.dark_gray or c.black, fg = c.white },
+        FloatBorder = { bg = opts.lighter_float and c.dark_gray or c.black, fg = c.light_gray },
         ColorColumn = { bg = c.dark_gray },
         Conceal = { fg = c.darker_white },
         CurSearch = { bg = c.yellow, fg = c.black },
@@ -57,7 +58,7 @@ function M.get_highlights(c, opts)
         WinBar = { link = "StatusLine" },
         WinBarNC = { link = "StatusLineNC" },
 
-        Comment = { fg = c.darker_white, italic = true },
+        Comment = { fg = c.darker_white, italic = opts.italic_comments },
         Function = { fg = c.yellow },
         String = { fg = c.green },
         Identifier = { fg = c.white },
@@ -265,4 +266,5 @@ function M.set_terminal_colors(c)
     vim.g.terminal_color_14 = c.light_cyan
     vim.g.terminal_color_15 = c.white
 end
+
 return M

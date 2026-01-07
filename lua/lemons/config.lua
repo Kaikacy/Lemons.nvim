@@ -23,6 +23,8 @@
 ---@field colors_override? lemons.ColorsOverride Override color palette
 ---@field undercurl? boolean Use undercurl instead of underline
 ---@field terminal_colors? boolean Set terminal colors
+---@field italic_comments? boolean Italicize comments
+---@field lighter_float? boolean Use ligher color for floating window background (enable if you have 'winborder' option set to 'none')
 
 local M = {}
 
@@ -31,6 +33,8 @@ M.defaults = {
     colors_override = {},
     undercurl = false,
     terminal_colors = true,
+    italic_comments = true,
+    float_style = "default",
 }
 
 ---@param opts? lemons.Config
