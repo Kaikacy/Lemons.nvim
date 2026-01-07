@@ -68,7 +68,7 @@ local colors = require("lemons.colors").colors
 | `light_cyan`   | `#6AD8ED` |
 
 ## 🔌 Plugin support
-Here's the [list of supported plugins](lua/lemons/highlights.lua#L161).
+Here's the [list of supported plugins](lua/lemons/highlights.lua#L162).
 I only added highlights for the ones I use and don't like the defaults, but **feel free to make PRs and Issues**.
 
 ## 🍭 Extras
