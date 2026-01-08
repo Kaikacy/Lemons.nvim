@@ -32,6 +32,8 @@ Just install with any package manager.
   colors_override = {}, -- Override color palette
   undercurl = false, -- Use undercurl instead of underline
   terminal_colors = true, -- Set terminal colors
+  italic_comments = true, -- Italicize comments
+  lighter_float = false, -- Use ligher color for floating window background
 }
 ```
 
