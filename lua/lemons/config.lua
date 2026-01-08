@@ -34,7 +34,7 @@ M.defaults = {
     undercurl = false,
     terminal_colors = true,
     italic_comments = true,
-    float_style = "default",
+    lighter_float = false,
 }
 
 ---@param opts? lemons.Config
