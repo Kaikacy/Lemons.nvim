@@ -159,6 +159,8 @@ function M.get_highlights(c, opts)
         ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
         ["@lsp.type.builtin"] = { fg = c.cyan },
         ["@lsp.mod.callable"] = { link = "Function" },
+        -- lua
+        ["@lsp.typemod.function.defaultLibrary.lua"] = { link = "@function.builtin" },
 
         --- PLUGINS ---
         -- blink.cmp
@@ -222,7 +224,7 @@ function M.get_highlights(c, opts)
         MiniIconsYellow = { fg = c.yellow },
 
         -- treesitter-context
-        TreesitterContextBottom = { underline = true, sp = c.light_gray },
+        TreesitterContextBottom = { underline = not opts.lighter_float, sp = c.light_gray },
         TreesitterContextLineNumber = { fg = c.darker_white },
 
         -- vim-illuminate
