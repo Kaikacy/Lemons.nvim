@@ -19,8 +19,11 @@
 ---@field cyan? string
 ---@field light_cyan? string
 
+---@alias lemons.HlsOverride fun(colors: lemons.Colors): table<string, false|vim.api.keyset.highlight>
+
 ---@class lemons.Config
 ---@field colors_override? lemons.ColorsOverride Override color palette
+---@field hls_override? lemons.HlsOverride Override highlights
 ---@field undercurl? boolean Use undercurl instead of underline
 ---@field terminal_colors? boolean Set terminal colors
 ---@field italic_comments? boolean Italicize comments
@@ -31,6 +34,9 @@ local M = {}
 ---@type lemons.Config
 M.defaults = {
     colors_override = {},
+    hls_override = function()
+        return {}
+    end,
     undercurl = false,
     terminal_colors = true,
     italic_comments = true,

@@ -4,8 +4,8 @@
 ---@field gray         string|"#212121"
 ---@field light_gray   string|"#565656"
 ---@field darker_white string|"#808080"
----@field dark_white   string|"#cacaca"
----@field white        string|"#f0f0f0"
+---@field dark_white   string|"#c0c0c0"
+---@field white        string|"#e8e8e8"
 ---@field red          string|"#ed505e"
 ---@field dark_green   string|"#0b1b10"
 ---@field lime         string|"#2ed592"
@@ -43,13 +43,10 @@ M.defaults = {
     light_cyan   = "#6ad8ed",
 }
 
-M.colors = M.defaults
-
 ---@param overrides lemons.ColorsOverride
 ---@return lemons.Colors
 function M.override(overrides)
-    M.colors = vim.tbl_extend("force", M.defaults, overrides)
-    return M.colors
+    return vim.tbl_extend("force", M.defaults, overrides)
 end
 
 return M
