@@ -30,11 +30,27 @@ Just install with any package manager.
 {
   ---@type lemons.ColorsOverride
   colors_override = {}, -- Override color palette
+  hls_override = function(c) return {} end, -- Override highlights
   undercurl = false, -- Use undercurl instead of underline
   terminal_colors = true, -- Set terminal colors
   italic_comments = true, -- Italicize comments
   lighter_float = false, -- Use ligher color for floating window background
 }
+```
+### Example:
+```lua
+require("lemons").setup({
+  lighter_float = true,
+  colors_override = {
+    red = "#ff0000" -- pure red
+  },
+  hls_override = function(c)
+    return {
+      SnacksPicker = { link = "Normal" },
+      SnacksPickerBorder = { bg = c.black, fg = c.gray },
+    }
+  end,
+})
 ```
 
 ## 🎨 Colors
@@ -43,7 +59,7 @@ To access color palette:
 -- default colors
 local default_colors = require("lemons.colors").defaults
 -- overridden colors (this should be used after calling setup)
-local colors = require("lemons.colors").colors
+local colors = require("lemons").colors
 ```
 
 ### Default colors:
