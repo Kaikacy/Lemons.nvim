@@ -66,14 +66,14 @@ function M.get_highlights(c, opts)
         Identifier = { fg = c.white },
         StorageClass = { fg = c.orange, italic = true },
         Type = { fg = c.lime },
-        Constant = { fg = c.pink },
+        Constant = { fg = c.red },
         Boolean = { link = "Constant" },
         Character = { link = "Constant" },
         Number = { link = "Constant" },
         -- Exception = { fg = c.red },
         Label = { fg = c.dark_white, italic = true },
-        Operator = { fg = c.red },
-        Special = { fg = c.light_cyan },
+        Operator = { fg = c.white },
+        Special = { fg = c.pink },
         Delimiter = { fg = c.white },
         Statement = { link = "Keyword" },
         Keyword = { fg = c.orange },
@@ -188,7 +188,7 @@ function M.get_highlights(c, opts)
         BlinkCmpKindFunction = { fg = c.yellow },
         BlinkCmpKindField = { fg = c.blue },
         BlinkCmpKindVariable = { fg = c.white },
-        BlinkCmpKindProperty = { fg = c.light_cyan },
+        BlinkCmpKindProperty = { fg = c.cyan },
         BlinkCmpKindClass = { fg = c.lime },
         BlinkCmpKindStruct = { fg = c.lime },
         BlinkCmpKindEnum = { fg = c.lime },
@@ -209,7 +209,7 @@ function M.get_highlights(c, opts)
         BlinkCmpKindTypeParameter = { fg = c.lime },
         BlinkCmpKindEvent = { fg = c.yellow },
         BlinkCmpKindOperator = { fg = c.red },
-        BlinkCmpKindReference = { fg = c.light_cyan },
+        BlinkCmpKindReference = { fg = c.white },
 
         -- lazy.nvim
         LazyButtonActive = { bg = c.gray, bold = true },
@@ -221,7 +221,7 @@ function M.get_highlights(c, opts)
         LeapBackdrop = { fg = c.darker_white },
 
         -- mini.icons
-        MiniIconsAzure = { fg = c.light_cyan },
+        MiniIconsAzure = { fg = c.lime },
         MiniIconsBlue = { fg = c.blue },
         MiniIconsCyan = { fg = c.cyan },
         MiniIconsGreen = { fg = c.green },
@@ -273,7 +273,7 @@ function M.set_terminal_colors(c)
     vim.g.terminal_color_11 = c.orange
     vim.g.terminal_color_12 = c.blue
     vim.g.terminal_color_13 = c.pink
-    vim.g.terminal_color_14 = c.light_cyan
+    vim.g.terminal_color_14 = c.cyan
     vim.g.terminal_color_15 = c.white
 end
 

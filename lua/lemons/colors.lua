@@ -16,7 +16,6 @@
 ---@field pink         string|"#f45ab4"
 ---@field dark_cyan    string|"#0c1918"
 ---@field cyan         string|"#37c3b5"
----@field light_cyan   string|"#6ad8ed"
 
 local M = {}
 
@@ -40,7 +39,6 @@ M.defaults = {
     pink         = "#f45ab4",
     dark_cyan    = "#0c1918",
     cyan         = "#37c3b5",
-    light_cyan   = "#6ad8ed",
 }
 
 ---@param overrides lemons.ColorsOverride
