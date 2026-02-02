@@ -11,6 +11,7 @@ Just install with any package manager.
 {
   "Kaikacy/Lemons.nvim",
   version = "*", -- for stable release
+  branch = "renaissance",
   lazy = false,
   priority = 1000,
   config = function()
@@ -70,23 +71,21 @@ local colors = require("lemons").colors
 | `gray`         | `#212121` |
 | `light_gray`   | `#565656` |
 | `darker_white` | `#808080` |
-| `dark_white`   | `#cacaca` |
-| `white`        | `#f0f0f0` |
+| `dark_white`   | `#c0c0c0` |
+| `white`        | `#e8e8e8` |
 | `red`          | `#ed505e` |
 | `dark_green`   | `#0b1b10` |
 | `lime`         | `#2ed592` |
-| `green`        | `#2ED563` |
-| `dark_yellow`  | `#1D190D` |
+| `green`        | `#2ed563` |
 | `orange`       | `#fa8a49` |
-| `yellow`       | `#F0BE42` |
+| `yellow`       | `#f0be42` |
 | `blue`         | `#5088ed` |
 | `pink`         | `#f45ab4` |
-| `dark_cyan`    | `#0C1918` |
-| `cyan`         | `#37C3B5` |
-| `light_cyan`   | `#6AD8ED` |
+| `dark_cyan`    | `#0c1918` |
+| `cyan`         | `#37c3b5` |
 
 ## 🔌 Plugin support
-Here's the [list of supported plugins](lua/lemons/highlights.lua#L162).
+Here's the [list of supported plugins](lua/lemons/highlights.lua#L176).
 I only added highlights for the ones I use and don't like the defaults, but **feel free to make PRs and Issues**.
 
 ## 🍭 Extras
