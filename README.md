@@ -2,7 +2,12 @@
 My favorite colorscheme for Neovim.
 > Dark mode only
 
-<img alt="preview" src="https://github.com/user-attachments/assets/c6f48c00-65a8-4271-a2cb-9f4112e5a98f" />
+> [!NOTE]
+> This is the branch I use, so I might update it bit more. Default branch is [master](https://github.com/Kaikacy/Lemons.nvim/tree/master).
+
+<img alt="preview" src="https://github.com/user-attachments/assets/01c5d022-77cf-4b18-bff5-5fe33f02f16e" />
+
+*Less colors than master, but cleaner*
 
 ## 📦 Setup
 Just install with any package manager.
@@ -11,7 +16,7 @@ Just install with any package manager.
 {
   "Kaikacy/Lemons.nvim",
   version = "*", -- for stable release
-  branch = "renaissance",
+  branch = "renaissance", -- remove this line to use default (master) branch
   lazy = false,
   priority = 1000,
   config = function()
