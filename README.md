@@ -1,10 +1,10 @@
 # Lemons.nvim 🍋
 My favorite colorscheme for Neovim.
+> Dark mode only
 
 > [!NOTE]
 > I'm currently using [renaissance](https://github.com/Kaikacy/Lemons.nvim/tree/renaissance) branch, so it's going to be bit more active.
 > Uses less colors and some highlights are changed, also additional config options are added. Although I haven't tested it as much.
-> Dark mode only
 
 <img alt="preview" src="https://github.com/user-attachments/assets/c6f48c00-65a8-4271-a2cb-9f4112e5a98f" />
 
