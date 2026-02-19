@@ -6,7 +6,7 @@ My favorite colorscheme for Neovim.
 > I'm currently using [renaissance](https://github.com/Kaikacy/Lemons.nvim/tree/renaissance) branch, so it's going to be bit more active.
 > Uses less colors and some highlights are changed, also additional config options are added. Although I haven't tested it as much.
 
-<img alt="preview" src="https://github.com/user-attachments/assets/c6f48c00-65a8-4271-a2cb-9f4112e5a98f" />
+![preview](https://github.com/user-attachments/assets/c6f48c00-65a8-4271-a2cb-9f4112e5a98f)
 
 ## 📦 Setup
 Just install with any package manager.
@@ -82,6 +82,6 @@ I only added highlights for the ones I use and don't like the defaults, but **fe
 ## 🍭 Extras
 [extras directory](extras/) contains additional color configs for different programs and tools.
 
-<img alt="terminal preview" src="https://github.com/user-attachments/assets/d829e7ba-7512-4be2-8774-9937d128024d" />
+![terminal preview](https://github.com/user-attachments/assets/d829e7ba-7512-4be2-8774-9937d128024d)
 
 *Foot terminal*
