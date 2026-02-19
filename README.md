@@ -5,7 +5,7 @@ My favorite colorscheme for Neovim.
 > [!NOTE]
 > This is the branch I use, so I might update it bit more. Default branch is [master](https://github.com/Kaikacy/Lemons.nvim/tree/master).
 
-<img alt="preview" src="https://github.com/user-attachments/assets/01c5d022-77cf-4b18-bff5-5fe33f02f16e" />
+![preview](https://github.com/user-attachments/assets/01c5d022-77cf-4b18-bff5-5fe33f02f16e)
 
 *Less colors than master, but cleaner*
 
@@ -96,6 +96,6 @@ I only added highlights for the ones I use and don't like the defaults, but **fe
 ## 🍭 Extras
 [extras directory](extras/) contains additional color configs for different programs and tools.
 
-<img alt="terminal preview" src="https://github.com/user-attachments/assets/d829e7ba-7512-4be2-8774-9937d128024d" />
+![terminal preview](https://github.com/user-attachments/assets/d829e7ba-7512-4be2-8774-9937d128024d)
 
 *Foot terminal*
